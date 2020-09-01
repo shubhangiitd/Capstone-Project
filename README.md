@@ -1,2 +1,2 @@
 # Capstone-Project
-Solutions to capstone project for python course @ Udemy 
+Solutions to capstone projects for python course @ Udemy 
