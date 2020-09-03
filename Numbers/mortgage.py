@@ -6,4 +6,8 @@ def mortgage(principle, interest_rate, year_term, interval_compounding = 'Annual
     n = year_term * interval[interval_compounding[0].lower()]
     print(r*100,n)
     
-    return principle * ( (r*(1+r)**n) / (((1+r)**n)-1) ) 
+    return (principle * ( (r*(1+r)**n) / (((1+r)**n)-1) )) * interval[interval_compounding[0].lower()]/12
+
+
+if __name__ == '__main__':
+    mortgage(100,10,20,'a')
