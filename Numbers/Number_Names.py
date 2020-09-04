@@ -1,9 +1,13 @@
+'''
+Show how to spell out a number in English. 
+You can use a preexisting implementation or roll your own, 
+but you should support inputs up to at least one million (or the maximum value of your language's default bounded integer type, if that's less). 
+Optional: Support for inputs other than positive integers (like zero, negative integers, and floating-point numbers).
+'''
 
-
-
-
+# Converts 3 digit number in word
 def three_digit_word(number):
-    if number = '000':
+    if number == '000':
         return ''
     
     word = []
@@ -28,8 +32,6 @@ def three_digit_word(number):
         number_in_word += item 
      
     return number_in_word.lower()
-  
-  
 def num_name(number):
     number = float(number)
     #Splits decimal and integer part of the number
@@ -44,6 +46,10 @@ def num_name(number):
     for zero in range(3-(len(str(integer_part))%3)):
         integer_part = '0'+ integer_part
 
+    if integer_part[0:3] == '000':
+        integer_part = integer_part[3:]
+    
+        
     triplets = int(len(integer_part) / 3)
     denomination_rev = denomination[0:triplets]                 
     denomination_rev.reverse()                 
@@ -62,4 +68,16 @@ def num_name(number):
         
     
     return word_srt[0].upper() + word_srt[1::]
-                      
+            
+    
+if __name__ == '__main__':
+    
+    while True:
+        try:
+            number = float(input("Please enter the number: "))
+            print(num_name(number))
+            break
+            
+        except:
+            print('Please type valid number')
+            
